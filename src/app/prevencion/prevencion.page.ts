@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-prevencion',
   templateUrl: './prevencion.page.html',
@@ -9,7 +9,7 @@ export class PrevencionPage implements OnInit {
 
   public avisos = [];
 
-  constructor() {
+  constructor(private router: Router) {
 
     this.avisos.push({
       image: 'https://assets.eleconomista.com.mx/__export/1606187095268/sites/eleconomista/img/2020/11/23/ilustracion_lavado_manos.png_673822677.png',
@@ -43,6 +43,10 @@ export class PrevencionPage implements OnInit {
 
   }
   ngOnInit() {
+  }
+
+   volver(){
+    this.router.navigate(['/tabs/tab1']);
   }
 
 }
