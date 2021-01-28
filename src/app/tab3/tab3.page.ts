@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Product } from "../models/product";
+import { ProductService } from "../services/product.service";
+import { CarService } from "../services/car.service";
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  public products: Product[];
+  constructor(private pService: ProductService, private carService: CarService) {
+    this.products = this.pService.getProducts();
+  }
 
-  constructor() {}
-
+  public addToCar(p: Product): void {
+    this.carService.updateCar(p);
+  }
 }
