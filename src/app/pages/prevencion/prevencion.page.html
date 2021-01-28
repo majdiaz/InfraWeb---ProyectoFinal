@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Cuide su salud
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div *ngFor="let aviso of avisos">
+
+        <ion-card>
+
+            <img width="500" height="200" src="{{aviso.image}}">
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <h2>{{aviso.contenido}}</h2>
+                </ion-card-subtitle>
+
+            </ion-card-header>
+
+            <ion-card-content></ion-card-content>
+
+        </ion-card>
+    </div>
+
+    <a href='https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public'><input type="button" value="Más Información"></a>
+
+</ion-content>
