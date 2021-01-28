@@ -25,17 +25,31 @@ export class ProductService {
 
     this.products.push({
       name: 'Gel antibacterial',
-      photo: 'https://cdn.shopify.com/s/files/1/0185/9786/products/40233-Just-a-Cinch-GraniteGray-WEB_c445aab1-f983-4ddf-b670-118c2d956e2f_1800x1200.jpg?v=1569122061',
-      description: 'Correa Estilo Cincho no Requiere Collar, la correa Just-a-Cinch de Ruffwear es fuerte, resistente e inspirada en el alpinismo.',
-      price: 950,
+      photo: 'https://resources.claroshop.com/medios-plazavip/mkt/5e8ff535a145a_1-800-x-800-neutrojpg.jpg',
+      description: 'gel antibacterial blumen para manos de 1 litro Neutro hand sanitizer.',
+      price: 249,
       cant: 1
     });
 
     this.products.push({
-      name: 'Casa para gatos',
-      photo: 'https://http2.mlstatic.com/D_NQ_NP_979488-MLM44243635915_122020-O.webp',
-      description: 'La casita está exelente para un gato de tamaño pequeño o mediano.',
-      price: 1300,
+      name: ' Tanque de oxigeno',
+      photo: 'https://resources.claroshop.com/medios-plazavip/mkt/5e8e36035ee53_r-ec680vop_1jpg.jpg',
+      description: 'Tanque de oxigeno 680 litros con carrito, kit completo',
+      price: 7999,
+      cant: 1
+    });
+    this.products.push({
+      name: ' Careta de proteccion facial',
+      photo: 'https://cdn1.coppel.com/images/catalog/pr/7197852-1.jpg',
+      description: 'Protege tu cara de polvo, partículas y más con la careta de protección, la pieza que no te puede faltar entre tus artículos de higiene',
+      price: 99,
+      cant: 1
+    });
+    this.products.push({
+      name: ' botiquin de protección completoTanque de oxigeno',
+      photo: 'https://www.ecestaticos.com/imagestatic/clipping/9da/8d5/9da8d5436f97bd692c59c108aeeee9ac/el-botiquin-esencial-para-luchar-contra-el-coronavirus-en-casa.jpg?mtime=1587116058',
+      description: 'El botiquin especial para luchar contra el coronavirus',
+      price: 250,
       cant: 1
     });
   }

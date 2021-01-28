@@ -14,6 +14,14 @@ const routes: Routes = [
     path: 'prevencion',
     loadChildren: () => import('./prevencion/prevencion.module').then( m => m.PrevencionPageModule)
 
+  },
+  {
+    path: 'agregarmedico',
+    loadChildren: () => import('./agregarmedico/agregarmedico.module').then( m => m.AgregarmedicoPageModule)
+  },
+  {
+    path: 'editarmedico',
+    loadChildren: () => import('./editarmedico/editarmedico.module').then( m => m.EditarmedicoPageModule)
   }
 ];
 

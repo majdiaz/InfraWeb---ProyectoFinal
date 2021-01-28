@@ -1,32 +1,68 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color = "secondary">
     <ion-title>
       Médicos 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
+<ion-content>
 
-  <ion-card *ngFor="let medico of medicos">
-    <div  *ngIf="medico.active">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" edge>
+    <ion-fab-button>
+      <ion-icon tappable (click)="agregarMedico()" name="add"></ion-icon>
+    </ion-fab-button>        
+  </ion-fab>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let medico of medicos">                     
+
+      <ion-item >
+        <ion-label>
+          <h1>{{medico.name}}</h1>
+          <h2>{{medico.grade}}</h2>
        
-    <img src="{{medico.image}}">
 
-    <ion-card-header>
-      <ion-card-subtitle>{{medico.grade}}</ion-card-subtitle>
-      <ion-card-title>{{medico.name}}</ion-card-title>
-    </ion-card-header>
+          <ion-label *ngIf="medico.id==ide">  
+            
+          <h3><strong>Descripción:</strong></h3>
+          <textarea readonly=true style="border: none;" rows=3 cols=35>{{medico.description}}
+          </textarea>            
 
-    <ion-card-content>
-      {{medico.description}}
-    </ion-card-content>
-    <ion-button href="{{medico.contact}}" fill="outline" slot="end">
-      Contactar
-      <ion-icon slot="start" name="logo-whatsapp"></ion-icon>
-    </ion-button>    
+          <h3><a href="{{medico.image}}">ver imagen</a></h3>
+          
+          <h3> 
+            <ion-button (click)="editarMedico(medico)" color="warning" fill="clear" shape="round">
+              <ion-icon slot="start" name="create"></ion-icon>
+            </ion-button>
+            <ion-button (click)="borrarMedico(medico.id)" color="danger" fill="clear" shape="round">
+              <ion-icon slot="start" name="trash" ></ion-icon>
+            </ion-button>
+          </h3>
+          </ion-label>    
+          <ion-label>
+          <ion-button href="{{medico.contact}}" fill="outline" slot="end">
+            Contactar
+            <ion-icon slot="start" name="logo-whatsapp"></ion-icon>
+          </ion-button>
+        </ion-label>
 
-  </div>
-</ion-card>
+        <ion-label>
+          <ion-button (click)="verMas(medico)" fill="clear" *ngIf="medico.id!=ide" shape="round">ver más 
+          <ion-icon name="arrow-down"></ion-icon>              
+        </ion-button>                   
+      </ion-label>
+          <ion-label >
+            <ion-button (click)="verMenos(medico)" fill="clear" *ngIf="medico.id==ide" shape="round">ver menos 
+              <ion-icon name="arrow-up" ></ion-icon>              
+            </ion-button>
+          </ion-label>
+          
+
+        </ion-label>
+      </ion-item>
+              
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>
